@@ -42,6 +42,15 @@ import {
 import { LogListener } from './commands/types';
 import HARMONY_DRIVER_CONSTRAINTS, { type HarmonyDriverConstraints } from './constraints';
 import { executeMethodMap } from './method-map';
+import { applyHypiumRpcGuard } from './hypium-rpc-guard';
+import log from './logger';
+
+// 设备端 uitest 假死时 hypium-driver 的 rpc() Promise 永久 pending（其 socket
+// timeout 处理器只 end() 不 reject），会把整个会话挂死。这里在模块加载时对
+// Device.prototype.rpc 加一次性超时守卫：限时无响应 → RPCError reject →
+// hypium-driver 既有恢复链（killall uitest + 重建通道）自动接管。
+// 幂等：多 driver 实例共享同一 hypium-driver 模块，只 patch 一次。
+applyHypiumRpcGuard(log);
 
 // NO_PROXY contains the paths that we never want to proxy to chromedriver.
 // This part copy from UiAutomator2
