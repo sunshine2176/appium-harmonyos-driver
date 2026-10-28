@@ -11,3 +11,5 @@ javaclient/target
 .DS_Store
 hypium_layout.json
 .npm-cache
+docs
+test
