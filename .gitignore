@@ -8,3 +8,5 @@ yalc.lock
 .idea
 .venv
 javaclient/target
+.DS_Store
+hypium_layout.json

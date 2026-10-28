@@ -10,7 +10,7 @@ capabilities = {
     'platformName': 'harmonyos',
     'appium:automationName': 'harmonyos',
     # 1.可选在指定SN的设备上运行
-    # 'appium:udid': '8VT5T21601007829',
+    # 'appium:udid': 'your-device-sn',
 }
 
 appium_server_url = 'http://localhost:4723'

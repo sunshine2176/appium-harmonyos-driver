@@ -9,7 +9,7 @@ capabilities = {
     'platformName': 'harmonyos',
     'appium:automationName': 'harmonyos',
     'appium:deviceName': 'mate40',
-    # 'appium:udid': '8VT5T21601007829',
+    # 'appium:udid': 'your-device-sn',
     'appium:waitForWebviewMs': 5 * 1000,
     # 'chromedriverExecutableDir': "D:\\workspace3\\test\\webdriver\\chromedriver",
 }
