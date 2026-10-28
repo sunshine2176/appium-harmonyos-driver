@@ -17,16 +17,15 @@ const HARMONY_DRIVER_CONSTRAINTS = {
   // hypium-driver 透传 caps（UiDriver.connect 会读取并赋给 Device 实例）。
   // rpcTimeout 即 uitest RPC 守卫的限时；建议 120000–180000，需小于 Appium
   // 客户端的读超时（agent 侧 600s），否则命令失败前客户端先超时。
+  // 注意：数字 caps 不能带 presence 键（Appium 3.x presence 校验器对数字值
+  // 会误报 "must not be empty or blank"），仅 isNumber 即表示可选。
   rpcTimeout: {
-    presence: false,
     isNumber: true,
   },
   hdcExecTimeout: {
-    presence: false,
     isNumber: true,
   },
   implicitWaitTime: {
-    presence: false,
     isNumber: true,
   },
   platformName: {
