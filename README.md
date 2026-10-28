@@ -1,3 +1,13 @@
+> 本仓库 fork 自 [zhihu/appium-harmonyos-driver](https://gitee.com/zhihu/appium-harmonyos-driver)（原项目已停止维护），基于 Apache-2.0 协议继续维护。
+>
+> **相对上游的主要修改：**
+> - fix(viewport): getPageSource 对非法 XML 标签/属性名做清洗并转义属性值
+> - feat(find): 控件查找支持 eq:/contains:/starts:/ends:/re:/rei: 选择器前缀
+> - fix(javaclient): 编译目标统一为 Java 11（已验证 appium java-client 9.x / Selenium 4.26 / TestNG 7.x 均为 Java 11 字节码）
+> - chore: 清理示例设备 SN，忽略 .DS_Store
+>
+> 安装：`appium driver install --source=git https://github.com/<你的用户名>/appium-harmonyos-driver.git`
+
 # appium-harmonyos-driver
 
 ## 安装说明
